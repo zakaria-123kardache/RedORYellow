@@ -3,23 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic X und O Battle Arena</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="assets/css/app.css">
-    <title>XO</title>
 </head>
 <body>
-    <H1>X Und O</H1>
-    <div id="board">
-        <div class="item" id="item0"></div>
-        <div class="item" id="item1"></div>
-        <div class="item" id="item2"></div>
-        <div class="item" id="item3"></div>
-        <div class="item" id="item4"></div>
-        <div class="item" id="item5"></div>
-        <div class="item" id="item6"></div>
-        <div class="item" id="item7"></div>
-        <div class="item" id="item8"></div>
-    </div>  
+    <div class="container">
+        <div class="player-card" id="player-two">
+            <div class="player-content">
+                <div class="player-avatar">
+                    <img src="https://api.dicebear.com/6.x/pixel-art/svg?seed=player2" alt="Player 2">
+                </div>
+                <h2>Player O</h2>
+                <div class="player-stats">
+                    <p>Wins: <span id="score-two">0</span></p>
+                    <p>Streak: <span id="streak-two">0</span></p>
+                </div>
+            </div>
+        </div>
 
-<script src="assets/js/app.js"></script>
+        <div class="game-section">
+            <h1 class="game-title animate__animated animate__pulse animate__infinite">Epic X und O</h1>
+            <div id="board">
+                <div class="item" id="item0"></div>
+                <div class="item" id="item1"></div>
+                <div class="item" id="item2"></div>
+                <div class="item" id="item3"></div>
+                <div class="item" id="item4"></div>
+                <div class="item" id="item5"></div>
+                <div class="item" id="item6"></div>
+                <div class="item" id="item7"></div>
+                <div class="item" id="item8"></div>
+            </div>
+            <button class="reset-btn" onclick="resetGame()">New Battle</button>
+        </div>
+
+        <div class="player-card" id="player-one">
+            <div class="player-content">
+                <div class="player-avatar">
+                    <img src="https://api.dicebear.com/6.x/pixel-art/svg?seed=player1" alt="Player 1">
+                </div>
+                <h2>Player X</h2>
+                <div class="player-stats">
+                    <p>Wins: <span id="score-one">0</span></p>
+                    <p>Streak: <span id="streak-one">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="clickSound" src="assets/sounds/click.mp3"></audio>
+    <audio id="winSound" src="assets/sounds/win.mp3"></audio>
+    <audio id="drawSound" src="assets/sounds/draw.mp3"></audio>
+
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
